@@ -1,0 +1,334 @@
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+ .container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(to right, #1e1e2f, #2a2a3a);  
+}
+
+ .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 10px 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    height: 70px;  
+ }    
+
+ .nav-left {
+    display: flex;
+    align-items: center;
+}
+
+ .navbar-logo {
+    width: 80px; 
+    height: auto; 
+    max-height: 50px; 
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    width: 112px;
+    height: 68px;
+}
+
+.navbar-logo:hover {
+    transform: scale(1.05);
+}
+
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+
+
+.search-bar {
+    flex-grow: 1;
+    max-width: 250px;
+    padding: 8px;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    outline: none;
+}
+
+.search-bar::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.create-btn {
+    background: linear-gradient(135deg, #ff7eb3, #ff4d4d);
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.create-btn:hover {
+    background: linear-gradient(135deg, #ff4d4d, #ff7eb3);
+    transform: scale(1.08);
+}
+
+
+.dropdown-menu {
+    background: #2a2a3a;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.dropdown-item {
+    color: white;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+.content-wrapper {
+    display: flex;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+
+.sidebar {
+    background: #25253a;
+    width: 280px;
+    padding: 20px;
+    border-right: 2px solid rgba(255, 255, 255, 0.1);
+    overflow-y: auto;
+    box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    padding: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ddd;
+}
+
+.sidebar li:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.sidebar .active {
+    background: linear-gradient(135deg, #0073e6, #005bb5);
+    color: white;
+    font-weight: bold;
+    transform: scale(1.02);
+}
+
+ 
+.main-content {
+    flex-grow: 1;
+    padding: 30px;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    margin: 20px;
+}
+
+.main-content h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+.main-content p {
+    font-size: 18px;
+    color: #bdbdbd;
+}
+
+ 
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #ff4d4d;
+    outline: none;
+    box-shadow: 0 0 12px rgba(255, 77, 77, 0.3);
+}
+
+ 
+button {
+    background: linear-gradient(135deg, #00c9ff, #0073e6);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #0073e6, #00c9ff);
+}
+
+ .delete-btn {
+    background: linear-gradient(135deg, #ff4d4d, #cc0000);
+    margin-left: 10px;
+}
+
+.delete-btn:hover {
+    background: linear-gradient(135deg, #cc0000, #ff4d4d);
+}
+
+ @media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .search-bar {
+        max-width: 250px;
+    }
+}
+
+.dropdown-container {
+    display: flex;
+    gap: 10px;
+    margin-right: 644px;
+
+  }
+  
+   .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown-menu {
+    display: none;  
+  }
+
+  .create-btn{
+    width: 75px;
+    height: 43px;
+    margin-bottom: 3px;
+}    
+
+.search-bar{
+    display: flex;
+    width:20px;
+    margin-top: 7px;
+    
+
+}
+
+.d-item{
+    display: flex;
+    color:white;
+    margin: top 15px;
+}
+
+.emty{
+    color:rgb(245, 72, 33);
+    height: 20%;
+}
+
+
+.contact{
+    width: 103px;
+    margin-top: 2px;
+}
+
+.p{
+    margin-top: 7px;
+    margin-left: 10px;
+}
+
+
+.edit-btn{
+    display: flex;
+    width: 101px;
+    height: 38px;
+    justify-content: center;
+}
+
+.delete-btn{
+    display: flex;
+        width: 101px;
+        height: 38px;
+        margin-left: 20px;
+        justify-content: center;
+}
+
+
+.b-container{
+    display: flex;
+
+}
+
+.b-container{
+    margin-top: 12px;
+}
+
+.name{
+    display: flex;
+    margin-left: 170px;
+}
+
+
+.bt-container{
+    display: flex;
+
+}
+
+.nav-btn{
+    
+    display: flex;
+    margin-left: 10px;
+
+}
